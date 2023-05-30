@@ -1,36 +1,28 @@
 import { Fragment, ReactComponentElement } from "react"
 import PropTypes from 'prop-types';
 
-const myName = 'Jcgl Juan Carlos'
-
-const getJobName = () => {
-    return 'Engineer Manager'
-}
-
-const getEmail = () => {
-    return 'jclgjuancarlos@gmail.com'
-}
-
 //con fragment
-export const FirstApp = ({myName, myJob}) => {
+export const FirstApp = ({title, subTitle, name}) => {
 
   return (
     <Fragment>
-        <h2>{ myName }</h2>
-        <h3>{ myJob }</h3>
-        <h3>{ getEmail() }</h3>
+        <h2>{ title }</h2>
+        <h3>{ subTitle }</h3>
+        <h3>{ name }</h3>
     </Fragment>
     
   )
 }
 
 FirstApp.propTypes = {
-    myName: PropTypes.string.isRequired,
-    myJob: PropTypes.string
+    title: PropTypes.string.isRequired,
+    subTitle: PropTypes.string,
+    name: PropTypes.string
 }
 
 FirstApp.defaultProps = {
-    myJob: 'Desempleado'
+    subTitle: 'Desempleado',
+    name: 'Jcgl Juan Carlos'
 }
 
 //sin fragment
