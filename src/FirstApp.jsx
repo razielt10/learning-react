@@ -6,8 +6,9 @@ export const FirstApp = ({title, subTitle, name}) => {
 
   return (
     <Fragment>
-        <h2>{ title }</h2>
-        <h3>{ subTitle }</h3>
+        <h1 data-testid="test-title">{ title }</h1>
+        <h2>{ subTitle }</h2>
+        <h2>{ subTitle }</h2>
         <h3>{ name }</h3>
     </Fragment>
     
