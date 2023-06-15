@@ -1,0 +1,64 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+    margin-block: 0;
+}
+
+body {
+    margin: 20px;
+    background-color: aliceblue;
+}
+
+h1 {
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(116, 116, 116);
+}
+
+button {
+    padding: 5px;
+    border: none;
+    background-color: darkkhaki;
+    color: white;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkgoldenrod;
+}
+
+form.search-category {
+    background-color: blanchedalmond;
+    margin: 20px 0;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+form span.text-search{
+    font-weight: bold;
+    display: block;
+    font-size: 15px;
+}
+
+.category {
+    background-color: blanchedalmond;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.category-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.category-items img {
+    max-width: 100%;
+}

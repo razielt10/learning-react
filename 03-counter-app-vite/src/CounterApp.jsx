@@ -7,15 +7,12 @@ export const CounterApp = ({value}) => {
     const [counter , setCounter] = useState(value)
 
     function handleAdd (ev) {
-        // setCounter(counter + 1)
         setCounter( (c) => c + 1 )
     }   
     function handleSubstract (ev) {
-        // setCounter(counter + 1)
         setCounter( (c) => c - 1 )
     }  
     function handleReset (ev) {
-        // setCounter(counter + 1)
         setCounter( (c) => value )
     }
 
