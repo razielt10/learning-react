@@ -2,9 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { HooksApp } from './HooksApp'
 import './index.css'
+
+import './08-useReducer/intro-reducer'
+
+import { Padre } from './07-tarea-memo/Padre'
 // import { Memorize } from './06-memos/Memorize'
 // import { MemoHook } from './06-memos/MemoHook'
-import { CallbackCounter } from './06-memos/CallbackCounter'
+// import { CallbackCounter } from './06-memos/CallbackCounter'
 
 // import { SimpleForm } from './02-useEffect/SimpleForm'
 // import { FormCustomHook } from './02-useEffect/FormCustomHook'
@@ -23,7 +27,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <MultipleCustumHooks /> */}
     {/* <FocusGreen /> */}
     {/* <Layout /> */}
-    <CallbackCounter />  
+    {/* <CallbackCounter />   */}
+    <Padre />
   </>
   // </React.StrictMode>,
 )
