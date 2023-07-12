@@ -1,37 +1,15 @@
-import { useReducer } from 'react'
-import { todoReducer } from './todoReducer'
+import { useEffect } from 'react'
 import { TodoList } from './TodoList'
 import TodoAdd from './TodoAdd'
-import { uuidv4 } from '../helpers/uuidv4'
-
-//deberia de estar en la misma funcion
-const initialState = [
-    { 
-        id: uuidv4(), 
-        description : 'Recolectar 1',
-        done: false,
-    },
-    { 
-        id: uuidv4(), 
-        description : 'Recolectar 2',
-        done: false,
-    }   
-]
-
+import { useTodo } from '../hooks/useTodo'
 
 export const TodoApp = () => {
 
-    const [todos, dispatchTodo] = useReducer( todoReducer, initialState)
+    const {todos, handleNewTodo, handleRemoveTodo, handleToggleTodo, handleEditTodo, handleUpdateTodo} = useTodo()
 
-    const handleNewTodo = (todo) => { 
-        console.log(todo)
-        const action = {
-            type: '[TODO] Add Todo',
-            payload: todo,
-        }
-
-        dispatchTodo(action)
-    }
+    useEffect( () => {
+        localStorage.setItem('todos', JSON.stringify(todos))
+    }, [ todos ])
 
     return (
         <>
@@ -41,8 +19,12 @@ export const TodoApp = () => {
             <div className="row">
                 <div className="col-7">
                     
-                    <TodoList todos={todos} />
-
+                    <TodoList
+                     todos={ todos }
+                     onRemoveTodo={ handleRemoveTodo } 
+                     onToggleTodo={ handleToggleTodo }
+                     onUpdateTodo={ handleUpdateTodo }
+                    />
                 </div>
                 <div className="col-5">
                     <h4>Agregar TODO</h4>
